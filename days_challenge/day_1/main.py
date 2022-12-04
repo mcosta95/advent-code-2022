@@ -4,7 +4,7 @@ sys.path.insert(0, '.')
 
 
 # opening the file in read mode
-my_file = open("data.txt", "r")
+my_file = open("days_challenge/data.txt", "r")
   
 # reading the file
 data = my_file.read()

@@ -4,9 +4,9 @@ sys.path.insert(0, '.')
 
 import string
 
-from day_3 import read_data
+from days_challenge.day_3 import read_data
 
-data_into_list = read_data(folder="day_3", filename="data", split="\n")
+data_into_list = read_data(folder="days_challenge/day_3", filename="data", split="\n")
 
 final_score = []
 for one_item in data_into_list:

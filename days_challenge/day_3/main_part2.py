@@ -4,9 +4,9 @@ sys.path.insert(0, '.')
 
 import string
 
-from day_3 import read_data
+from days_challenge.day_3 import read_data
 
-data_into_list = read_data(folder="day_3", filename="data", split="\n")
+data_into_list = read_data(folder="days_challenge/day_3", filename="data", split="\n")
 
 group_lst = [data_into_list[n:n+3] for n in range(0, len(data_into_list), 3)]
 alpha_lst = list(string.ascii_lowercase) + list(string.ascii_lowercase.upper())

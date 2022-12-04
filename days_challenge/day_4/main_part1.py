@@ -2,9 +2,9 @@ import sys
 
 sys.path.insert(0, '.')
 
-from day_4 import read_data
+from days_challenge.day_4 import read_data
 
-final_lst = read_data(folder="day_4", filename="data", split="\n", extra_clean=",")
+final_lst = read_data(folder="days_challenge/day_4", filename="data", split="\n", extra_clean=",")
 
 final_score = []
 
