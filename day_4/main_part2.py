@@ -1,17 +1,10 @@
 import sys
-import string
 
 sys.path.insert(0, '.')
 
-# opening the file in read mode
-my_file = open("day_4/data.txt", "r")
-  
-# reading the file
-data = my_file.read()
+from day_4 import read_data
 
-# prepare the data
-data_into_list = data.split('\n')
-final_lst = [iter_.split(",") for iter_ in data_into_list]
+final_lst = read_data(folder="day_4", filename="data", split="\n", extra_clean=",")
 
 final_score = []
 

@@ -2,16 +2,9 @@ import sys
 
 sys.path.insert(0, '.')
 
-# opening the file in read mode
-my_file = open("day_2/data.txt", "r")
-  
-# reading the file
-data = my_file.read()
+from day_2 import read_data
 
-# prepare the data
-data_into_list = data.split('\n')
-final_lst = [iter_.split(" ") for iter_ in data_into_list]
-
+final_lst = read_data(folder="day_2", filename="data", split="\n", extra_clean=" ")
 
 dict_translate = {"rock": "A", "scissors": "C", "paper": "B"}
 dict_win = {"X": "lose", "Y": "draw", "Z": "win"}

@@ -1,16 +1,12 @@
 import sys
-import string
 
 sys.path.insert(0, '.')
 
-# opening the file in read mode
-my_file = open("day_3/data.txt", "r")
-  
-# reading the file
-data = my_file.read()
+import string
 
-# prepare the data
-data_into_list = data.split('\n')
+from day_3 import read_data
+
+data_into_list = read_data(folder="day_3", filename="data", split="\n")
 
 final_score = []
 for one_item in data_into_list:
@@ -31,4 +27,3 @@ for one_item in data_into_list:
 result = sum(final_score)
 
 print(F"[ANSWER - PART 1] Final results: {result}")
-#print(F"[ANSWER - PART 2] Max top 3 value: {top_3}")
