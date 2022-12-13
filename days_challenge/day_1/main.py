@@ -1,23 +1,32 @@
+# Library
+FEATURE_DIR = r"./days_challenge/"
+
 import sys
 
-sys.path.insert(0, '.')
+sys.path.insert(0, FEATURE_DIR)
+
+from utils import read_data
+from day_1.develop import get_order_data, get_score
+
+# parameters
+DAY_NR = 1
+PART = 1
+TEST = False
+
+if __name__ == '__main__':
+
+    if TEST:
+        filename_ = "data_test"
+    else:
+        filename_ = "data"
+
+    # import data
+    final_lst = read_data(folder=f"days_challenge/day_{DAY_NR}/data", filename=filename_, split="\n\n", extra_clean="\n")
+    
+    # development
+    sum_lst = get_order_data(final_lst)
+
+    # get scores
+    final_score = get_score(sum_lst, PART, test=TEST)
 
 
-# opening the file in read mode
-my_file = open("days_challenge/data.txt", "r")
-  
-# reading the file
-data = my_file.read()
-data_into_list = data.replace('\n\n', ' ').split(' ')
-
-# prepare the data
-final_lst = [iter_.split("\n") for iter_ in data_into_list]
-sum_lst = [sum(list(map(int, values_))) for values_ in final_lst]
-
-# get the answer
-sum_lst.sort(reverse=True)
-top_3 = sum(sum_lst[:3])
-max_value = max(sum_lst[0])
-
-print(F"[ANSWER - PART 1] Max value: {max_value}")
-print(F"[ANSWER - PART 2] Max top 3 value: {top_3}")
